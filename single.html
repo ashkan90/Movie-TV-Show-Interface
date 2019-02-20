@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/vue-plyr/dist/vue-plyr.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app dark>
+      <v-toolbar dark color="blue-grey darken-4" dense>
+        <v-toolbar-title></v-toolbar-title>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn flat>Home</v-btn>
+          <v-btn flat>Movies</v-btn>
+          <v-btn flat>Celebrities</v-btn>
+          <v-btn flat>News</v-btn>
+          <v-btn flat>Community</v-btn>
+        </v-toolbar-items>
+        <v-spacer></v-spacer>
+        <v-flex sm3>
+          <v-text-field
+            label="Search what you want"
+            solo
+            single-line
+            hide-details
+            append-icon="search"
+          ></v-text-field>
+        </v-flex>
+        <v-flex sm1>
+          <v-btn>Sign in</v-btn>
+        </v-flex>
+      </v-toolbar>
+      <v-content>
+      <v-container fluid grid-list-md>
+        <v-layout row wrap>
+          <v-flex xs12>
+            <v-layout justify-center>
+              <v-flex xs12> 
+                <v-toolbar color="grey darken-4">
+                  <v-icon>info</v-icon>
+                  <v-toolbar-title>Film ismi</v-toolbar-title>
+                </v-toolbar>
+                <v-card>
+                  <v-container
+                    fluid
+                    grid-list-md>
+                    <v-layout row wrap>
+                      <v-flex
+                        xs12 sm12
+                        >       
+                        <v-card>
+                          <v-toolbar >
+                            <v-toolbar-side-icon></v-toolbar-side-icon>     
+                            <v-menu nudge-width="auto">
+                              <v-toolbar-title slot="activator">
+                                <span>All Sources</span>
+                                <v-icon dark>arrow_drop_down</v-icon>
+                              </v-toolbar-title>
+
+                              <v-list>
+                                <v-list-tile @click="">
+                                  <v-list-tile-title>text</v-list-tile-title>
+                                </v-list-tile>
+                                <v-list-tile @click="">
+                                  <v-list-tile-title>text2</v-list-tile-title>
+                                </v-list-tile>
+                              </v-list>
+                            </v-menu>
+                            <v-spacer></v-spacer>
+                            <!-- pink darken-1 --->
+                            <v-btn class="hidden-xs-only" color="red darken-4">
+                              <v-icon left>desktop_windows</v-icon>
+                              Cinema Mode
+                            </v-btn>
+                          </v-toolbar>
+                          <vue-plyr>
+                            <div data-plyr-provider="youtube" data-plyr-embed-id="6MAOHD70UFE"></div>
+                          </vue-plyr>
+
+                          <v-card-actions>
+                            <v-btn icon>
+                              <v-icon color="red darken-2">favorite</v-icon>
+                            </v-btn>
+                            <v-btn
+                              class="white--text"
+                              flat>
+                              <v-icon left color="grey darken-1">thumb_up</v-icon>
+                              <span>Like</span>
+                            </v-btn>
+                            <v-spacer></v-spacer>
+                            <v-btn flat color="grey darken-2">
+                              <span class="white--text">get Help</span>
+                            </v-btn>
+                          </v-card-actions>
+                        </v-card>
+                      </v-flex>
+                      <v-flex
+                        xs12 sm12
+                        >
+                        <v-card>
+                          <v-toolbar dense>
+                            <v-icon>info</v-icon>
+                            <v-toolbar-title>About Film</v-toolbar-title>
+                            <v-spacer></v-spacer>
+                            <span class="grey--text">Added 1 day ago</span>
+                          </v-toolbar>
+
+                          <v-card>
+                            <v-container
+                              fluid
+                              grid-list-md>
+                              <v-layout row wrap>
+                                <v-flex xs12 sm12>
+                                  <v-card flat dark class="white--text">
+                                    <v-flex xs12>
+                                      <v-flex xs12 sm3 class="hidden-sm-and-up">
+                                        <v-img
+                                          src="https://picsum.photos/350/450?random"
+                                          height="200px"
+                                        ></v-img>
+                                        
+                                      </v-flex>
+                                      <v-layout>
+                                        <v-flex xs12 sm3 class="hidden-xs-only">
+                                          <v-img
+                                            src="https://picsum.photos/350/450?random"
+                                            height="340px"
+                                          ></v-img>
+                                        </v-flex>
+                                        <v-flex xs12 sm8>
+                                          <v-card-title primary-title>
+                                            <div>
+                                              <div class="headline">El Royale’de Zor Zamanlar izle</div>
+                                              <span>Who Producted</span>
+                                              <div>
+                                                <span>31 Chapters | Ongoing | Rank 45</span>
+                                              </div>
+                                            </div>
+                                          </v-card-title>
+                                        </v-flex>
+                                      </v-layout>
+                                    </v-flex>
+                                    <v-card-actions >
+                                      <v-chip label class="white--text" color="grey darken-1">Label</v-chip>
+                                      <v-chip label class="white--text" color="grey darken-1">Label2</v-chip>
+                                    </v-card-actions>
+                                    <v-slide-y-transition>
+                                      <v-card-text v-show="show">
+                                        <h6 class="subheading">
+                                          Zuo Tianchen is the last living human in a mutated zombie-infested city. Just when he was sure he had died, he finds his soul returned to just before that ill-fated day ten years ago. He swears he'll protect the people important to him this time round and reunite with his past lover. Watch his struggles to survive equipped with his memory of the next ten years!
+                                        </h6>
+                                      </v-card-text>
+                                    </v-slide-y-transition>
+                                  </v-card>
+                                </v-flex>
+                              </v-layout>
+                            </v-container>
+                            <v-card-actions class="fill-height align-center justify-center">
+                              <v-btn icon @click="show = !show">
+                                <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                              </v-btn>
+                            </v-card-actions> 
+                          </v-card>
+                        </v-card>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+      </v-container>
+      <v-footer
+        dark
+        height="auto">
+        <v-card
+          flat
+          tile
+          class="white--text text-xs-center"
+        >
+          <!--v-card-text>
+            <v-btn
+              v-for="icon in icons"
+              :key="icon"
+              class="mx-3 white--text"
+              icon
+            >
+              <v-icon size="24px">{{ icon }}</v-icon>
+            </v-btn>
+          </v-card-text-->
+
+          <v-card-text class="white--text" >
+            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </v-card-text>
+
+          <v-divider></v-divider>
+
+          <v-card-text class="white--text">
+            &copy;2018 — <strong>Vuetify</strong>
+          </v-card-text>
+        </v-card>
+      </v-footer>
+    </v-content>
+    </v-app>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script> 
+  <script type="text/javascript" src="https://unpkg.com/vue-plyr/dist/vue-plyr.js"></script>
+  
+  <script>
+    
+    new Vue({
+      el: "#app",
+      data: () => ({
+        icons: [
+          'fab fa-facebook',
+          'fab fa-twitter',
+          'fab fa-google-plus',
+          'fab fa-linkedin',
+          'fab fa-instagram'
+        ],
+        show: false
+      })
+    })
+    Vue.use(VuePlyr)
+  </script>
+</body>
+</html>
